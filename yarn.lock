@@ -9007,6 +9007,13 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
+react-glitch-effect@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-glitch-effect/-/react-glitch-effect-3.1.0.tgz#b8a14d57888b9d47182cfbc3c408c340269077f8"
+  integrity sha512-qBjCTTSWPKTkvifWzJtO/tNDxEdtihJvshp5LYW+noiATloai679vHer4Vb/ipSPu9Yvu7xa+gB254WfNlpaaA==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-icons@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
