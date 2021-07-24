@@ -63,7 +63,7 @@ const Navbar = ({width, setWidth, setHeight, tab, setTab}) => {
                 </motion.div> :
                 <motion.div className="links" initial="start" animate="end" variants={parent}>
                     {
-                        ["Home", "About", "Experience", "Projects", "Contact"].map((link, idx) => (
+                        ["Home", "About", "Projects", "Contact", "Resume"].map((link, idx) => (
                             <motion.p 
                             key={idx} 
                             onClick={handleChangeTab} 
@@ -87,7 +87,7 @@ const Navbar = ({width, setWidth, setHeight, tab, setTab}) => {
                         </motion.div>
                         <motion.div className="menu-links">
                             {
-                                ["Home", "About", "Experience", "Projects", "Contact"].map((link, idx) => (
+                                ["Home", "About", "Projects", "Contact", "Resume"].map((link, idx) => (
                                     <motion.p 
                                     key={idx} 
                                     onClick={handleChangeTab} 

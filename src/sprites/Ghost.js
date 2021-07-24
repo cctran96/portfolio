@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react"
 import { debounce } from "../helpers/debounce"
+import { motion } from "framer-motion"
 import ghost from "../images/ghost.png"
 
 const Ghost = ({speed, start, screenWidth, screenHeight, dir}) => {
@@ -63,7 +64,18 @@ const Ghost = ({speed, start, screenWidth, screenHeight, dir}) => {
     }, [handleSpriteMove, speed])
 
     return (
-        <div className="sprite" style={{width: width/8, top: startPos.top, left: startPos.left, transform: `translate3d(${position.x}px, ${position.y}px, 0)`}}>
+        <motion.div 
+        className="sprite"
+        initial="start"
+        animate="end"
+        variants={ghostVar}
+        style={{
+            width: width/8, 
+            top: startPos.top, 
+            left: startPos.left, 
+            transform: `translate3d(${position.x}px, ${position.y}px, 0)`
+        }}
+        >
             <img 
             src={ghost} 
             alt="ghost" 
@@ -71,8 +83,13 @@ const Ghost = ({speed, start, screenWidth, screenHeight, dir}) => {
             style={{
                 transform: `translateX(-${width/8 * frame}px) ${dir === "left" ? "scaleX(-1)" : null}`
             }}/>
-        </div>
+        </motion.div>
     )
 }
 
 export default Ghost
+
+const ghostVar = {
+    start: {opacity: 0},
+    end: {opacity: 1, transition: {delay: 3.5, duration: 1}}
+}

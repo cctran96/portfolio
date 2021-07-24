@@ -1,8 +1,11 @@
 import React, { useEffect, useState} from "react"
 import Logo from "./images/Logo"
-import Navbar from "./components/Navbar"
-import Home from "./components/Home"
-import Contact from "./components/Contact"
+import Navbar from "./containers/Navbar"
+import Home from "./containers/Home"
+import About from "./containers/About"
+import Resume from "./containers/Resume"
+import Projects from "./containers/Projects"
+import Contact from "./containers/Contact"
 
 const getWidth = () => window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
 const getHeight = () => window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
@@ -27,8 +30,20 @@ const App = () => {
                     tab === "home" ? 
                     <Home width={width} height={height}/> :
                     (
-                        tab === "contact" ?
-                        <Contact/> : null
+                        tab === "about" ?
+                        <About/> : 
+                        (
+                            tab === "resume" ?
+                            <Resume/> : 
+                            (
+                                tab === "projects" ?
+                                <Projects/> :
+                                (
+                                    tab === "contact" ?
+                                    <Contact/> : null
+                                )
+                            )
+                        )
                     )
                 }
             </div>

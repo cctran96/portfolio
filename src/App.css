@@ -17,6 +17,7 @@ body::-webkit-scrollbar {
 
 .ani-logo svg {
     height: 300px;
+    color: rgb(110, 84, 148);
 }
 
 .navbar {
@@ -34,12 +35,18 @@ body::-webkit-scrollbar {
     transition: 0.2s ease-in-out;
 }
 
-.active {
+.active, h1 {
     color: rgb(18, 153, 18);
 }
 
-.active:hover {
+.active:hover, .icon-container svg:hover {
     color: rgb(18, 153, 18) !important;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.active {
+    font-size: 25px;
 }
 
 .open-button, .links {
@@ -96,9 +103,10 @@ body::-webkit-scrollbar {
 .links {
     width: 600px;
     justify-content: space-around;
+    align-items: center;
 }
 
-.links p, .menu-links p, .navbar svg {
+.links p, .menu-links p, .navbar svg, .icon-container svg {
     cursor: pointer;
 }
 
@@ -121,10 +129,16 @@ body::-webkit-scrollbar {
     padding-top: 80px;
     background-repeat: no-repeat;
     background-size: cover;
+    height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .banner {
-    height: calc(100vh - 80px);
+    height: 100%;
+    width: 100%;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,14 +147,15 @@ body::-webkit-scrollbar {
     color: rgb(18, 153, 18);
     background-color: black;
     overflow: hidden;
+    position: relative;
 }
 
-.banner h1, .banner h2, .banner h3, .active {
+h1, .banner h2, .banner h3, .active {
     animation: glitch 1s linear infinite;
 }
 
-.banner h1:before,
-.banner h1:after,
+h1:before,
+h1:after,
 .banner h2:before,
 .banner h2:after,
 .banner h3:before,
@@ -152,13 +167,13 @@ body::-webkit-scrollbar {
     left: 0;
 }
 
-.banner h1:before, .banner h2:before, .banner h2:before, .active:before {
+h1:before, .banner h2:before, .banner h2:before, .active:before {
     animation: glitchTop 1s linear infinite;
     clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 }
 
-.banner h1:after, .banner h2:after, .banner h3:after, .active:after {
+h1:after, .banner h2:after, .banner h3:after, .active:after {
     animation: glitchBotom 1.5s linear infinite;
     clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
     -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
@@ -222,18 +237,36 @@ img {
     -ms-user-select: none;
 }
 
-.banner img {
-    width: 1960px;
-}
-
 .sprite {
     overflow: hidden;
     position: absolute;
 }
 
+.icon-container svg {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.contact-icons svg {
+    width: 60px;
+    height: 60px;
+}
+
 @media (max-width: 1800px) {
     .banner img {
         width: 1400px;
+    }
+    .icon-container svg {
+        width: 50px;
+        height: 50px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .contact-icons svg {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -241,11 +274,31 @@ img {
     .banner img {
         width: 1000px;
     }
+    .icon-container svg {
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .contact-icons svg {
+        width: 45px;
+        height: 45px;
+    }
 }
 
 @media (max-width: 1200px) {
     .banner img {
         width: 800px;
+    }
+    .icon-container svg {
+        width: 30px;
+        height: 30px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+    .contact-icons svg {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -253,35 +306,89 @@ img {
     .banner img {
         width: 600px;
     }
+    .icon-container svg {
+        width: 25px;
+        height: 25px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .contact-icons svg {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 @media (max-width: 800px) {
     .banner img {
         width: 400px;
     }
+    .icon-container svg {
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .contact-icons svg {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.icon-container {
+    width: clamp(150px, 50%, 500px);
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.content-container {
+    font-family: OCR A Std, monospace;
+    width: clamp(450px, 80%, 1200px);
+    height: clamp(500px, 80%, 800px);
+    border-radius: 20px;
+    background-color: rgba(128, 128, 128, 0.1) ;
+    margin: auto;
+    display: flex;
+    box-shadow: 
+        0 0 5px 2px white,
+        0 0 10px 4px #129912,
+        0 0 20px 6px cyan;
+}
+
+.content-container h1 {
+    margin: 30px 0 0 30px;
+    font-size: clamp(30px, 3vw, 50px);
 }
 
 .contact {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    color: white;
+    justify-content: space-between;
 }
 
-.contact p {
-    width: clamp(300px, 50%, 700px);
-    text-align: center;
+.contact-icons {
+    margin-top: auto;
+    margin-left: 30px;
+    width: clamp(270px, 40%, 400px);
+    display: flex;
+    justify-content: space-around;
 }
 
-.contact a {
-    margin-top: 50px;
-    border: 3px solid white;
-    text-decoration: none;
-    color: white;
-    padding: 10px;
+.contact-icons svg:hover {
+    cursor: pointer;
 }
 
-.contact a:hover {
-    border-color: cadetblue;
-    color: cadetblue
+.contact-info {
+    width: 100%;
+    height: calc(100% - 90px);
+    border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
 }
+
