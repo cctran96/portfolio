@@ -39,7 +39,7 @@ body::-webkit-scrollbar {
     color: rgb(18, 153, 18);
 }
 
-.active:hover, .icon-container svg:hover {
+.active:hover, .icon-container svg:hover, .contact-icons svg:hover {
     color: rgb(18, 153, 18) !important;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -106,7 +106,7 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
-.links p, .menu-links p, .navbar svg, .icon-container svg {
+.links p, .menu-links p, .navbar svg, .icon-container svg, .message button {
     cursor: pointer;
 }
 
@@ -217,16 +217,19 @@ h1:after, .banner h2:after, .banner h3:after, .active:after {
 
 .banner h1 {
     font-size: clamp(15px, 2.5vw, 40px);
+    z-index: 1;
 }
 
 .banner h2 {
     font-size: clamp(50px , 8vw, 200px);
     margin-top: -15px;
     margin-bottom: -15px;
+    z-index: 1;
 }
 
 .banner h3 {
     font-size: clamp(18px, 2.5vw, 50px);
+    z-index: 1;
 }
 
 img {
@@ -335,7 +338,7 @@ img {
 }
 
 .icon-container {
-    width: clamp(150px, 50%, 500px);
+    width: clamp(150px, 30%, 450px);
     display: flex;
     justify-content: space-around;
     z-index: 1;
@@ -344,7 +347,6 @@ img {
 .content-container {
     font-family: OCR A Std, monospace;
     width: clamp(450px, 80%, 1200px);
-    height: clamp(500px, 80%, 800px);
     border-radius: 20px;
     background-color: rgba(128, 128, 128, 0.1) ;
     margin: auto;
@@ -380,15 +382,110 @@ img {
     justify-content: space-around;
 }
 
-.contact-icons svg:hover {
-    cursor: pointer;
-}
-
-.contact-info {
+.contact-info, .bio-container {
     width: 100%;
     height: calc(100% - 90px);
-    border: 1px solid white;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
 }
 
+.statement, .message, .skills-container, .bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 49%;
+    min-width: 440px;
+    color: whitesmoke;
+}
+
+.contact h2 {
+    font-size: clamp(25px, 3vw, 40px);
+}
+
+.message label {
+    font-size: clamp(15px, 2vw, 25px);
+}
+
+.message input, .message textarea {
+    background-color: rgb(48, 48, 48);
+    font-size: clamp(12px, 2vw, 20px);
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.message input:focus, .message textarea:focus {
+    outline: none;
+}
+
+.message form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+.message button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 30px;
+    width: clamp(40px, 60%, 160px);
+    font-size: clamp(12px, 2vw, 20px);
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    background-color: rgb(48, 48, 48);
+    border: none;
+    border-right: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    color: white;
+}
+
+.message button:focus {
+    transform: scale(0.9);
+}
+
+.message h3 {
+    font-size: clamp(10px, 2vw, 15px);
+}
+
+.statement p {
+    font-size: clamp(12px, 2vw, 20px);
+    margin: 0 50px 50px 50px;
+}
+
+.bio, .skills-container {
+    margin-top: 50px;
+    font-size: clamp(12px, 2vw, 18px);
+}
+
+.bio p {
+    margin: 0 50px 0 50px;
+}
+
+.bio img {
+    width: clamp(150px, 60%, 400px);
+    height: auto;
+    border-radius: 50%;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: clamp(200px, 65%, 500px);
+    margin-bottom: 30px;
+}
+
+.skills svg {
+    width: clamp(30px, 6vw, 50px);
+    margin: 10px;
+    height: auto;
+}
