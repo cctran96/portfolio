@@ -10,11 +10,11 @@ const Home = ({width, height}) => {
             <motion.h2 variants={h2Var} title="Chau Tran">Chau Tran</motion.h2>
             <motion.h3 variants={h3Var} title="and I'm a Full Stack Developer">and I'm a Full Stack Developer.</motion.h3>
             <Icons/>
-            <Ghost speed={1} start={{left: width, top: 0}} dir="left" screenWidth={width} screenHeight={height}/>
+            {/* <Ghost speed={1} start={{left: width, top: 0}} dir="left" screenWidth={width} screenHeight={height}/>
             <Ghost speed={0.75} start={{top: 0}} dir="right" screenWidth={width} screenHeight={height}/>
             <Ghost speed={0.8} start={{left: width, top: height/2}} dir="left" screenWidth={width} screenHeight={height}/>
             <Ghost speed={0.9} start={{top: height/2}} dir="right" screenWidth={width} screenHeight={height}/>
-            <Ghost speed={1.25} start={{top: height/3}} dir="right" screenWidth={width} screenHeight={height}/>
+            <Ghost speed={1.25} start={{top: height/3}} dir="right" screenWidth={width} screenHeight={height}/> */}
         </motion.div>
     )
 }

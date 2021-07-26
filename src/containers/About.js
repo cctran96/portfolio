@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { FaReact } from "react-icons/fa"
 import { DiRuby, DiSqllite, DiDatabase } from "react-icons/di"
 import { SiRedux, SiRails, SiJavascript, SiPostgresql, SiFramer, SiBootstrap, SiPostman, SiGithub, SiHtml5, SiCss3 } from "react-icons/si"
+import { VscJson } from "react-icons/vsc"
+import { AiTwotoneApi } from "react-icons/ai"
 
 const About = () => {
     return (
@@ -26,17 +28,21 @@ const About = () => {
                             <SiPostgresql color="#0064A5"/>
                             <SiFramer color="#6CD5FD"/>
                             <SiBootstrap color="#673BB6"/>
-                            <SiPostman color="EF5B25"/>
+                            <SiPostman color="#EF5B25"/>
                             <SiGithub color="white"/>
+                            <VscJson color="gold"/>
+                            <AiTwotoneApi color="skyblue"/>
                         </div>
                     </div>
                     <div className="bio">
                         <img src={Portrait} alt="profile"/>
                         <p>
-                            Hi, my name is Chau, and I have a love for developing comprehensive applications that maxmimize user experience. 
-                            My journey started in December of 2020 where I began to delve into the world of coding. 
-                            I first learned the basics of Python, solving algorithms on my free time. 
-                            I transitioned to Javascript and Ruby as I wanted learn the ins and outs of both frontend and backend development.
+                            Hi, my name is Chau, and I'm a pharmacy student turned coder. Although this wasn't my first
+                            career choice, coding has always fascinated me, and I have grown to love it. I strive to develop
+                            comprehensive applications that have a positive impact. This can be in the form of creating 
+                            simple games for entertainment, beneficial applications that help improve a user's health,
+                            or websites that enhance a user's experience by offering a wide range of functionality. Join me
+                            as I continue my journey and better myself each and every day.
                         </p>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import Navbar from "./containers/Navbar"
 import Home from "./containers/Home"
 import About from "./containers/About"
 import Resume from "./containers/Resume"
-import Projects from "./containers/Projects"
+import Works from "./containers/Works"
 import Contact from "./containers/Contact"
 
 const getWidth = () => window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
@@ -36,8 +36,8 @@ const App = () => {
                             tab === "resume" ?
                             <Resume/> : 
                             (
-                                tab === "projects" ?
-                                <Projects/> :
+                                tab === "works" ?
+                                <Works/> :
                                 (
                                     tab === "contact" ?
                                     <Contact/> : null
