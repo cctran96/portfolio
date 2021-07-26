@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { projects } from "../helpers/projects"
 import { blogs } from "../helpers/blogs"
+import Card from "../components/Card"
 
 const Works = () => {
     const [view, setView] = useState("All")
@@ -14,17 +15,28 @@ const Works = () => {
 
     return (
         <motion.div className="content-container" initial="start" animate="end" variants={containerVar}>
-            <div className="works">
-                <motion.h1 variants={headerVar} title="Things I've Worked On">Things I've Worked On</motion.h1>
+            <motion.div className="works" variants={headerVar}>
+                <h1 title="Things I've Worked On">Things I've Worked On</h1>
                 <div className="options-container">
                     <div onClick={handleClick} className={`option1 ${view === "All" ? "selected" : null}`}>All</div>
                     <div onClick={handleClick} className={`option2 ${view === "Projects" ? "selected" : null}`}>Projects</div>
                     <div onClick={handleClick} className={`option3 ${view === "Blogs" ? "selected" : null}`}>Blogs</div>
                 </div>
-                <div className="works-container">
-                    
+                <div className="card-container">
+                    {
+                        view === "All" ?
+                        all.map((work, idx) => <Card key={idx} work={work}/>) :
+                        (
+                            view === "Projects" ?
+                            projects.map((work, idx) => <Card key={idx} work={work}/>) :
+                            (
+                                view === "Blogs" ?
+                                blogs.map((work, idx) => <Card key={idx} work={work}/>) : null
+                            )
+                        )
+                    }
                 </div>
-            </div>
+            </motion.div>
         </motion.div>
     )
 }
