@@ -1,12 +1,17 @@
 import React from "react"
 import { motion } from "framer-motion"
+import resume from "../helpers/resume.pdf"
+import image from "../images/resume.png"
 
 const Resume = () => {
     return (
         <motion.div className="content-container" initial="start" animate="end" variants={containerVar}>
-            <div className="resume">
-                <motion.h1 variants={headerVar} title="My Resume">My Resume</motion.h1>
-            </div>
+            <motion.div className="resume" variants={headerVar}>
+                <h1 title="My Resume">My Resume</h1>
+                <a href={resume} target="_blank" rel="noopener noreferrer">
+                    <img src={image} alt="resume"/>
+                </a>
+            </motion.div>
         </motion.div>
     )
 }

@@ -8,7 +8,10 @@ const Works = () => {
     const [view, setView] = useState("All")
 
     const handleClick = e => {
-        setView(e.target.innerText)
+        if (e.target.innerText !== view) {
+            setView(null)
+            setImmediate(() => setView(e.target.innerText))
+        }
     }
 
     const all = [...projects, ...blogs].sort((a,b) => a.priority > b.priority ? -1 : 1)
@@ -22,20 +25,22 @@ const Works = () => {
                     <div onClick={handleClick} className={`option2 ${view === "Projects" ? "selected" : null}`}>Projects</div>
                     <div onClick={handleClick} className={`option3 ${view === "Blogs" ? "selected" : null}`}>Blogs</div>
                 </div>
-                <div className="card-container">
-                    {
-                        view === "All" ?
-                        all.map((work, idx) => <Card key={idx} work={work}/>) :
-                        (
-                            view === "Projects" ?
-                            projects.map((work, idx) => <Card key={idx} work={work}/>) :
+                {   view ?
+                    <div className="card-container">
+                        {
+                            view === "All" ?
+                            all.map((work, idx) => <Card key={idx} work={work}/>) :
                             (
-                                view === "Blogs" ?
-                                blogs.map((work, idx) => <Card key={idx} work={work}/>) : null
+                                view === "Projects" ?
+                                projects.map((work, idx) => <Card key={idx} work={work}/>) :
+                                (
+                                    view === "Blogs" ?
+                                    blogs.map((work, idx) => <Card key={idx} work={work}/>) : null
+                                )
                             )
-                        )
-                    }
-                </div>
+                        }
+                    </div> : null
+                }
             </motion.div>
         </motion.div>
     )

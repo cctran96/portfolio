@@ -2,6 +2,7 @@ body {
     margin: 0;
     scroll-behavior: smooth;
     background-color: black;
+    cursor: default;
 }
 
 body::-webkit-scrollbar {
@@ -218,7 +219,6 @@ h1:after, .banner h2:after, .banner h3:after, .active:after {
 .banner h1 {
     font-size: clamp(15px, 2.5vw, 40px);
     z-index: 1;
-    cursor: default;
 }
 
 .banner h2 {
@@ -226,13 +226,11 @@ h1:after, .banner h2:after, .banner h3:after, .active:after {
     margin-top: -15px;
     margin-bottom: -15px;
     z-index: 1;
-    cursor: default;
 }
 
 .banner h3 {
     font-size: clamp(18px, 2.5vw, 50px);
     z-index: 1;
-    cursor: default;
 }
 
 img {
@@ -539,7 +537,6 @@ img {
     justify-content: center;
     width: 95%;
     margin: 20px 0 20px 0;
-    border: 1px solid white;
 }
 
 .card {
@@ -548,15 +545,81 @@ img {
     align-items: center;
     text-align: center;
     margin: 10px;
-    width: calc(100%/3.5);
-    min-width: 200px;
-    height: 200px;
-    border: 1px solid red;
-    color: whitesmoke;
+    width: calc(100%/3.3);
+    min-width: 300px;
+    height: 250px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.card-icons {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.card-icons svg {
+    width: 30px;
+    height: auto;
+    margin: 5px;
+}
+
+.card img {
+    margin-top: auto;
+    width: 75%;
+    height: 125px;
 }
 
 .card h2 {
     margin: 0;
     margin-top: 5px;
-    font-size: 125%;
+    font-size: 150%;
+}
+
+.card p {
+    font-size: 17px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+}
+
+.card-overlay a, .card-overlay p {
+    margin: 10px 0 10px 0;
+    text-decoration: none;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.resume a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.resume a:hover {
+    transform: scale(1.05);
+    transition: 0.5s ease-in-out;
+}
+
+.resume img {
+    width: clamp(300px, 70%, 600px);
+    height: auto;
 }
