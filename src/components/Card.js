@@ -3,11 +3,16 @@ import { motion } from "framer-motion"
 import { FaMediumM, FaReact } from "react-icons/fa"
 import { DiRuby, DiSqllite } from "react-icons/di"
 import { SiRedux, SiRails, SiJavascript, SiPostgresql, SiFramer, SiBootstrap } from "react-icons/si"
-import { VscJson } from "react-icons/vsc"
+import { VscJson, VscChromeClose } from "react-icons/vsc"
 import { AiTwotoneApi } from "react-icons/ai"
 
 const Card = ({work}) => {
     const [hover, setHover] = useState(false)
+    const [viewDemo, setViewDemo] = useState(false)
+
+    const handleDemo = () => {
+        setViewDemo(!viewDemo)
+    }    
 
     const renderIcon = (name, idx) => {
         switch(name) {
@@ -39,59 +44,68 @@ const Card = ({work}) => {
     }
 
     return (
-        <motion.div
-        className="card"
-        initial="start"
-        animate="end"
-        variants={cardVar}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        style={{
-            background: work.type === "blog" ? "whitesmoke" : work.color,
-            color: work.type === "blog" ? "black" : "whitesmoke"
-        }}
-        >
-            {   
-                !hover ?
-                <>
-                    <h2>{work.name}</h2>
-                    <p>{work.description}</p>
-                    <div className="card-icons">
+        <>
+            <motion.div
+            className="card"
+            initial="start"
+            animate="end"
+            variants={cardVar}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            style={{
+                background: work.type === "blog" ? "whitesmoke" : work.color,
+                color: work.type === "blog" ? "black" : "whitesmoke"
+            }}
+            >
+                {   
+                    !hover ?
+                    <>
+                        <h2>{work.name}</h2>
+                        <p>{work.description}</p>
+                        <div className="card-icons">
+                            {
+                                work.icons ?
+                                work.icons.map((name, idx) => renderIcon(name, idx)) :
+                                <FaMediumM/>
+                            }
+                        </div>
+                    </> :
+                    null
+                }
+                {
+                    hover ?
+                    <motion.div className="card-overlay" initial="start" animate="end" variants={overlayVar}>
                         {
-                            work.icons ?
-                            work.icons.map((name, idx) => renderIcon(name, idx)) :
-                            <FaMediumM/>
+                            work.type === "project" ?
+                            <>
+                                {
+                                    work.source ?
+                                    <a href={work.source} target="_blank" rel="noopener noreferrer">Source</a> :
+                                    <>
+                                        <a href={work.frontend} target="_blank" rel="noopener noreferrer">Frontend</a>
+                                        <a href={work.backend} target="_blank" rel="noopener noreferrer">Backend</a>
+                                    </>
+                                }
+                                {
+                                    work.demo ?
+                                    <p onClick={handleDemo}>Demo</p> : null
+                                }
+                            </> :
+                            <>
+                                <a href={work.link} target="_blank" rel="noopener noreferrer">Source</a>
+                            </>
                         }
-                    </div>
-                </> :
-                null
+                    </motion.div> : null
+                }
+            </motion.div>
+            {   viewDemo ? 
+                <div className="demo-overlay">
+                    <motion.div className="demo-container" variants={demoVar}>
+                        <VscChromeClose size={40} onClick={handleDemo}/>
+                    </motion.div>
+                </div> : null
             }
-            {
-                hover ?
-                <motion.div className="card-overlay" initial="start" animate="end" variants={overlayVar}>
-                    {
-                        work.type === "project" ?
-                        <>
-                            {
-                                work.source ?
-                                <a href={work.source} target="_blank" rel="noopener noreferrer">Source</a> :
-                                <>
-                                    <a href={work.frontend} target="_blank" rel="noopener noreferrer">Frontend</a>
-                                    <a href={work.backend} target="_blank" rel="noopener noreferrer">Backend</a>
-                                </>
-                            }
-                            {
-                                work.demo ?
-                                <p>Demo</p> : null
-                            }
-                        </> :
-                        <>
-                            <a href={work.link} target="_blank" rel="noopener noreferrer">Source</a>
-                        </>
-                    }
-                </motion.div> : null
-            }
-        </motion.div>
+        </>
     )
 }
 
@@ -105,4 +119,9 @@ const cardVar = {
 const overlayVar = {
     start: {scale: 0.1, opacity: 0, rotate: 360},
     end: {scale: 1, opacity: 1, rotate: 0, transition: {duration: 0.5}}
+}
+
+const demoVar = {
+    start: {opacity: 0, y: -100},
+    end: {opacity: 1, y: 0, transition: {duration: 0.5}}
 }
