@@ -15,7 +15,7 @@ export const projects = [
         name: "What's in the Fridge?",
         frontend: "https://github.com/moshriguez/whats-in-the-fridge-frontend",
         backend: "https://github.com/moshriguez/whats-in-the-fridge-backend",
-        demo: "youtube",
+        demo: "1KoNAjmQc9o",
         tools: "React.js, Ruby on Rails, SQLite",
         description: "A web application for finding recipes with written and video instructions based on what users have in their fridge",
         priority: 8,
@@ -26,7 +26,7 @@ export const projects = [
     {
         name: "Pokébattler",
         source: "https://github.com/cctran96/Pokebattler",
-        demo: "youtube",
+        demo: "3miVKVS0pEw",
         tools: "React.js, Ruby, SQLite",
         description: "A battle simulator where users can create their own pokemon team and bring it into battle",
         priority: 6,

@@ -5,6 +5,7 @@ import { DiRuby, DiSqllite } from "react-icons/di"
 import { SiRedux, SiRails, SiJavascript, SiPostgresql, SiFramer, SiBootstrap } from "react-icons/si"
 import { VscJson, VscChromeClose } from "react-icons/vsc"
 import { AiTwotoneApi } from "react-icons/ai"
+import Demo from "./Demo"
 
 const Card = ({work}) => {
     const [hover, setHover] = useState(false)
@@ -102,6 +103,12 @@ const Card = ({work}) => {
                 <div className="demo-overlay">
                     <motion.div className="demo-container" variants={demoVar}>
                         <VscChromeClose size={40} onClick={handleDemo}/>
+                        {console.log(work.demo)}
+                        {
+                            work.demo ?
+                            <Demo demo={work.demo}/>
+                            : null
+                        }
                     </motion.div>
                 </div> : null
             }
