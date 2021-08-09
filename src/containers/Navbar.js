@@ -51,7 +51,7 @@ const Navbar = ({width, setWidth, setHeight, tab, setTab}) => {
 
     return (
         <nav className="navbar" style={{top: visible ? '0' : '-80px' }}>
-            <a href="/">
+            <a href="/portfolio">
                 <motion.div className="logo" initial="start" animate="end" variants={logo}>
                     <Logo/>
                 </motion.div>
