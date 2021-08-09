@@ -3,7 +3,7 @@ export const projects = [
         name: "Rovereign",
         frontend: "https://github.com/cctran96/rovereign-frontend",
         backend: "https://github.com/cctran96/rovereign-backend",
-        demo: "youtube",
+        demo: "n_9qLVUJHRs",
         tools: "React.js, Ruby on Rails, PostgreSQL, Redux",
         description: "An RPG game where players can explore different maps and battle different monsters",
         priority: 9,
