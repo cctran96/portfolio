@@ -50,12 +50,10 @@ const Navbar = ({width, setWidth, setHeight, tab, setTab}) => {
     }
 
     return (
-        <nav className="navbar" style={{top: visible ? '0' : '-80px' }}>
-            <a href="/portfolio">
-                <motion.div className="logo" initial="start" animate="end" variants={logo}>
-                    <Logo/>
-                </motion.div>
-            </a>
+        <nav className="navbar" style={{top: visible ? '0' : '-80px'}}>
+            <motion.div onClick={() => window.location.reload(false)} className="logo" initial="start" animate="end" variants={logo}>
+                <Logo/>
+            </motion.div>
             {
                 collapse ? 
                 <motion.div className="open-button" animate={isOpen ? "open" : "closed"} variants={openVar}>
