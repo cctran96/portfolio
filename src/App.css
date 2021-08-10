@@ -347,7 +347,7 @@ img {
 
 .content-container {
     font-family: OCR A Std, monospace;
-    width: clamp(450px, 80%, 1200px);
+    width: clamp(400px, 80%, 1200px);
     border-radius: 20px;
     background-color: rgba(128, 128, 128, 0.1) ;
     margin: auto;
@@ -475,7 +475,7 @@ img {
 }
 
 .bio img {
-    width: clamp(150px, 60%, 400px);
+    width: clamp(150px, 50%, 400px);
     height: auto;
     border-radius: 50%;
 }
