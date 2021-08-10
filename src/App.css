@@ -85,7 +85,9 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     float: right;
-    width: clamp(250px, 50%, 300px);
+    min-width: 250px;
+    width: 50%;
+    max-width: 300px;
     height: 100%;
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     font-size: 18px;
@@ -335,6 +337,7 @@ img {
     .contact-icons svg {
         width: 35px;
         height: 35px;
+        margin-right: 50px;
     }
 }
 
@@ -348,6 +351,7 @@ img {
 .content-container {
     font-family: OCR A Std, monospace;
     width: clamp(400px, 80%, 1200px);
+    padding: 20px;
     border-radius: 20px;
     background-color: rgba(128, 128, 128, 0.1) ;
     margin: auto;
@@ -442,7 +446,7 @@ img {
     margin: auto;
     height: 30px;
     width: clamp(40px, 60%, 160px);
-    font-size: clamp(12px, 2vw, 20px);
+    font-size: clamp(12px, 2vw, 18px);
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     background-color: rgb(48, 48, 48);
     border: none;
