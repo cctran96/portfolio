@@ -350,7 +350,9 @@ img {
 
 .content-container {
     font-family: OCR A Std, monospace;
-    width: clamp(400px, 80%, 1200px);
+    min-width: 400px;
+    width: 80%;
+    max-width: 1200px;
     padding: 20px;
     border-radius: 20px;
     background-color: rgba(128, 128, 128, 0.1) ;
