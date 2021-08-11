@@ -13,7 +13,7 @@ const Card = ({work}) => {
 
     const handleDemo = () => {
         setViewDemo(!viewDemo)
-    }    
+    }
 
     const renderIcon = (name, idx) => {
         switch(name) {
