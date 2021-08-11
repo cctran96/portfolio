@@ -5,7 +5,7 @@ import { blogs } from "../helpers/blogs"
 import Card from "../components/Card"
 
 const Works = () => {
-    const [view, setView] = useState("All")
+    const [view, setView] = useState("Projects")
 
     const handleClick = e => {
         if (e.target.innerText !== view) {
@@ -21,22 +21,17 @@ const Works = () => {
             <motion.div className="works" variants={headerVar}>
                 <h1 title="Things I've Worked On">Things I've Worked On</h1>
                 <div className="options-container">
-                    <div onClick={handleClick} className={`option1 ${view === "All" ? "selected" : null}`}>All</div>
-                    <div onClick={handleClick} className={`option2 ${view === "Projects" ? "selected" : null}`}>Projects</div>
-                    <div onClick={handleClick} className={`option3 ${view === "Blogs" ? "selected" : null}`}>Blogs</div>
+                    <div onClick={handleClick} className={`option1 ${view === "Projects" ? "selected" : null}`}>Projects</div>
+                    <div onClick={handleClick} className={`option2 ${view === "Blogs" ? "selected" : null}`}>Blogs</div>
                 </div>
                 {   view ?
                     <div className="card-container">
                         {
-                            view === "All" ?
-                            all.map((work, idx) => <Card key={idx} work={work}/>) :
+                            view === "Projects" ?
+                            projects.map((work, idx) => <Card key={idx} work={work}/>) :
                             (
-                                view === "Projects" ?
-                                projects.map((work, idx) => <Card key={idx} work={work}/>) :
-                                (
-                                    view === "Blogs" ?
-                                    blogs.map((work, idx) => <Card key={idx} work={work}/>) : null
-                                )
+                                view === "Blogs" ?
+                                blogs.map((work, idx) => <Card key={idx} work={work}/>) : null
                             )
                         }
                     </div> : null
