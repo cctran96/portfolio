@@ -14,12 +14,10 @@ const Works = () => {
         }
     }
 
-    const all = [...projects, ...blogs].sort((a,b) => a.priority > b.priority ? -1 : 1)
-
     return (
         <motion.div className="content-container" initial="start" animate="end" variants={containerVar}>
             <motion.div className="works" variants={headerVar}>
-                <h1 title="Things I've Worked On">Things I've Worked On</h1>
+                <h1 title="I've Worked On...">I've Worked On...</h1>
                 <div className="options-container">
                     <div onClick={handleClick} className={`option1 ${view === "Projects" ? "selected" : null}`}>Projects</div>
                     <div onClick={handleClick} className={`option2 ${view === "Blogs" ? "selected" : null}`}>Blogs</div>

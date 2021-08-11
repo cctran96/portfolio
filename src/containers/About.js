@@ -14,7 +14,7 @@ const About = () => {
                 <h1 title="Get to Know Me">Get to Know Me</h1>
                 <div className="bio-container">
                     <div className="skills-container">
-                        <h2>Things I've Worked With</h2>
+                        <h2>I've Worked With...</h2>
                         <div className="skills">
                             <SiJavascript color="#F0DB4F"/>
                             <FaReact color="#61DBFB"/>

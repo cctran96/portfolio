@@ -98,7 +98,9 @@ body::-webkit-scrollbar {
 .menu-links {
     display: flex;
     flex-direction: column;
-    height: clamp(200px, 50%, 600px);
+    min-height: 200px;
+    height: 50%;
+    max-height: 600px;
     justify-content: space-around;
     align-items: center;
 }
